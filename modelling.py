@@ -12,6 +12,9 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore")
     np.random.seed(40)
 
+    # mlflow set traking
+    mlflow.set_tracking_uri("sqlite:///mlflow.db")
+    
     # Read the wine-quality csv file (make sure you're running this from the root of MLflow!)
     file_path = sys.argv[3] if len(sys.argv) > 3 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "train_pca.csv")
     data = pd.read_csv(file_path)
