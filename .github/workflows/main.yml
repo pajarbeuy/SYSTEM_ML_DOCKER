@@ -32,7 +32,7 @@ jobs:
 
       - name: Get latest MLflow run_id
         run: |
-         RUN_ID=$(python -c "
+          RUN_ID=$(python -c "
           import mlflow
           mlflow.set_tracking_uri('sqlite:///mlflow.db')
           client = mlflow.tracking.MlflowClient()
